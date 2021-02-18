@@ -45,6 +45,8 @@ hascmd() {
     command -v "$@" &> /dev/null
 }
 
+has_cmd() { hascmd "$@"; }
+
 (( USE_CURL )) && ! has_cmd curl && USE_CURL=0 || true
 (( USE_WGET )) && ! has_cmd wget && USE_WGET=0 || true
 if ! (( USE_CURL )) && ! hascmd wget && hascmd curl; then USE_CURL=1 USE_WGET=0; fi
