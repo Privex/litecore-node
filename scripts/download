@@ -8,7 +8,8 @@ set -e
 : ${LTC_ARCH=""}
 : ${LTC_TARBALL=""}
 
-root_dir="$(realpath "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/..")"
+#root_dir="$(realpath "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/..")"
+root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/.."
 
 [[ -n "$LTC_PLATFORM" ]] && platform="$LTC_PLATFORM" || platform=`uname -a | awk '{print tolower($1)}'`
 [[ -n "$LTC_ARCH" ]] && arch="$LTC_ARCH" || arch=`uname -m`
