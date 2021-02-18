@@ -55,9 +55,9 @@ if ! (( USE_WGET )) && ! hascmd curl && hascmd wget; then USE_CURL=0 USE_WGET=1;
 
 download_bitcoind() {
     local bdir="${root_dir}/bin"
-    [ -x "$root_dir" ] || chmod +x "$root_dir"
-    [ -r "$root_dir" ] || chmod +r "$root_dir"
-    [ -w "$root_dir" ] || chmod +w "$root_dir"
+    #[ -x "$root_dir" ] || chmod +x "$root_dir"
+    #[ -r "$root_dir" ] || chmod +r "$root_dir"
+    #[ -w "$root_dir" ] || chmod +w "$root_dir"
 
     [[ -d "$bdir" ]] || mkdir -pv "$bdir"
     [ -x "$bdir" ] || chmod +x "$bdir"
